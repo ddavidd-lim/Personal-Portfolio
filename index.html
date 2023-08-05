@@ -1,46 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <header>
+<head>
+  <title>David Lim</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X=UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="header">
+  <div id="container">
       <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <img src="images/DELICIOUS.jpg" alt="" style="width: 100px; height: auto;">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
       </nav>
-    </header>
+      <div class="header-text">
+        <p>Software Engineer</p>
+        <h1>Hello! I'm <span>David Lim</span>. You can see what I've been up to here!</h1>
+      </div>
+  </div>
+</div>
+<!-- About -->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="images/rengoku sprite 2.png" alt="">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About me</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+          when an unknown printer took a galley of type and scrambled it to make a type 
+          specimen book. It has survived not only five centuries, but also the leap into 
+          electronic typesetting, remaining essentially unchanged.</p>
 
-    <section id="home">
-      <h1>Welcome to My Portfolio</h1>
-      <!-- Add any introduction or background information here -->
-    </section>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+              <li><span>Web Development</span><br>Web app Development</li>
+              <li><span>App Development</span><br>Building Android/iOS apps</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+              <li><span>Web Development</span><br>Web app Development</li>
+              <li><span>App Development</span><br>Building Android/iOS apps</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+              <li><span>Web Development</span><br>Web app Development</li>
+              <li><span>App Development</span><br>Building Android/iOS apps</li>
+            </ul>
+          </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio and Projects -->
+<div id="portfolio">
+  <div class="container">
+    <h1 class="sub-title">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="" alt="">
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <!-- Add information about yourself, your skills, and experience here -->
-    </section>
+<script>
 
-    <section id="portfolio">
-      <h2>My Work</h2>
-      <!-- Showcase your projects or work samples here -->
-    </section>
+  var tablinks = document.getElementsByClassName("tab-links")
+  var tabcontents = document.getElementsByClassName("tab-contents")
+  function opentab(tabname){
+    for (tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for (tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <!-- Add a contact form or provide contact information here -->
-    </section>
+</script>
 
-    <footer>
-      <!-- Add any additional information or links here -->
-      <p>&copy; 2023 Your Name</p>
-    </footer>
-
-    <!-- Add any additional scripts or libraries here -->
-  </body>
+</body>
 </html>
